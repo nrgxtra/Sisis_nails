@@ -1,9 +1,9 @@
 @font-face {
     font-family: "flaticon";
-    src: url("./flaticon.ttf?a35f16443c2345e25c25746c584f1d99") format("truetype"),
-url("./flaticon.woff?a35f16443c2345e25c25746c584f1d99") format("woff"),
-url("./flaticon.woff2?a35f16443c2345e25c25746c584f1d99") format("woff2"),
-url("./flaticon.eot?a35f16443c2345e25c25746c584f1d99#iefix") format("embedded-opentype"),
+    src: url("flaticon.ttf?a35f16443c2345e25c25746c584f1d99") format("truetype"),
+url("flaticon.woff?a35f16443c2345e25c25746c584f1d99") format("woff"),
+url("flaticon.woff2?a35f16443c2345e25c25746c584f1d99") format("woff2"),
+url("flaticon.eot?a35f16443c2345e25c25746c584f1d99#iefix") format("embedded-opentype"),
 url("./flaticon.svg?a35f16443c2345e25c25746c584f1d99#flaticon") format("svg");
 }
 
