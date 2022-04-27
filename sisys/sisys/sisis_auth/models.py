@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 
+from sisys.sisis_auth.managers import SisisUserManager
+
 
 class SisisNailsUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
@@ -14,19 +16,23 @@ class SisisNailsUser(AbstractBaseUser, PermissionsMixin):
         auto_now_add=True,
     )
     USERNAME_FIELD = 'email'
+    manager = SisisUserManager()
 
 
 class Profile(models.Model):
     profile_image = models.ImageField(
         upload_to='profiles',
         blank=True,
+        null=True,
     )
     name = models.CharField(
         max_length=50,
         blank=True,
+        null=True,
     )
     phone_number = models.IntegerField(
-        blank=True
+        blank=True,
+        null=True,
     )
     user = models.OneToOneField(
         SisisNailsUser,
@@ -35,4 +41,4 @@ class Profile(models.Model):
     )
 
 
-from signals import *
+from .signals import *

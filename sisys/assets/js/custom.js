@@ -232,9 +232,9 @@
 
      // Newsletter modal
      $(window).on('load',function(){
-        setTimeout(function(){ 
+        setTimeout(function(){
             $(".newsletter-popup-wrapepr").addClass("active")
-        }, 3000); 
+        }, 3000);
     });
     $(".newsletter-modal-close").on("click", function() {
         $(".newsletter-popup-wrapepr").removeClass("active")
@@ -284,12 +284,12 @@
 
     // Count Time JS
 	function makeTimer() {
-		var endTime = new Date("October 30, 2022 17:00:00 PDT");			
+		var endTime = new Date("October 30, 2022 17:00:00 PDT");
 		var endTime = (Date.parse(endTime)) / 1000;
 		var now = new Date();
 		var now = (Date.parse(now) / 1000);
 		var timeLeft = endTime - now;
-		var days = Math.floor(timeLeft / 86400); 
+		var days = Math.floor(timeLeft / 86400);
 		var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
 		var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
 		var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
@@ -304,46 +304,46 @@
     setInterval(function() { makeTimer(); }, 300);
 
     // Subscribe form
-    $(".newsletter-form").validator().on("submit", function (event) {
-        if (event.isDefaultPrevented()) {
+    // $(".newsletter-form").validator().on("submit", function (event) {
+    //     if (event.isDefaultPrevented()) {
             // Handle The Invalid Form...
-            formErrorSub();
-            submitMSGSub(false, "Please enter your email correctly");
-        } else {
-            // Everything Looks Good!
-            event.preventDefault();
-        }
-    });
-    function callbackFunction (resp) {
-        if (resp.result === "success") {
-            formSuccessSub();
-        }
-        else {
-            formErrorSub();
-        }
-    }
-    function formSuccessSub(){
-        $(".newsletter-form")[0].reset();
-        submitMSGSub(true, "Thank you for subscribing!");
-        setTimeout(function() {
-            $("#validator-newsletter").addClass('hide');
-        }, 4000)
-    }
-    function formErrorSub(){
-        $(".newsletter-form").addClass("animated shake");
-        setTimeout(function() {
-            $(".newsletter-form").removeClass("animated shake");
-        }, 1000)
-    }
-    function submitMSGSub(valid, msg){
-        if(valid){
-            var msgClasses = "validation-success";
-        } else {
-            var msgClasses = "validation-danger";
-        }
-        $("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
-    }
-        
+    //         formErrorSub();
+    //         submitMSGSub(false, "Please enter your email correctly");
+    //     } else {
+    //         // Everything Looks Good!
+    //         event.preventDefault();
+    //     }
+    // });
+    // function callbackFunction (resp) {
+    //     if (resp.result === "success") {
+    //         formSuccessSub();
+    //     }
+    //     else {
+    //         formErrorSub();
+    //     }
+    // }
+    // function formSuccessSub(){
+    //     $(".newsletter-form")[0].reset();
+    //     submitMSGSub(true, "Thank you for subscribing!");
+    //     setTimeout(function() {
+    //         $("#validator-newsletter").addClass('hide');
+    //     }, 4000)
+    // }
+    // function formErrorSub(){
+    //     $(".newsletter-form").addClass("animated shake");
+    //     setTimeout(function() {
+    //         $(".newsletter-form").removeClass("animated shake");
+    //     }, 1000)
+    // }
+    // function submitMSGSub(valid, msg){
+    //     if(valid){
+    //         var msgClasses = "validation-success";
+    //     } else {
+    //         var msgClasses = "validation-danger";
+    //     }
+    //     $("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
+    // }
+    //
     // AJAX MailChimp
     $(".newsletter-form").ajaxChimp({
         url: "https://envyTheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", // Your url MailChimp
@@ -351,23 +351,23 @@
     });
 
     // Back To Top
-    $('body').append("<div class='go-top'><i class='flaticon-navigate-up-arrow'></i></div>");
-    $(window).on('scroll', function() {
-        var scrolled = $(window).scrollTop();
-        if (scrolled > 600) $('.go-top').addClass('active');
-        if (scrolled < 600) $('.go-top').removeClass('active');
-    });
-    $('.go-top').on('click', function() {
-        $('html, body').animate({
-            scrollTop: '0',
-        }, 500 );
-    });
+    // $('body').append("<div class='go-top'><i class='flaticon-navigate-up-arrow'></i></div>");
+    // $(window).on('scroll', function() {
+    //     var scrolled = $(window).scrollTop();
+    //     if (scrolled > 600) $('.go-top').addClass('active');
+    //     if (scrolled < 600) $('.go-top').removeClass('active');
+    // });
+    // $('.go-top').on('click', function() {
+    //     $('html, body').animate({
+    //         scrollTop: '0',
+    //     }, 500 );
+    // });
 
     // Preloader
     $(window).on("load", function() {
         var preLoder = $(".loader-wrapper");
         preLoder.delay(700).fadeOut(500);
-        $("body").addClass("loaded");
+        $('body').addClass("loaded");
     });
 
     // AOS JS
