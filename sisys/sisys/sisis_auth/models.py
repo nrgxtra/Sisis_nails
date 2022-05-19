@@ -5,7 +5,7 @@ from django.contrib.auth.models import PermissionsMixin
 from sisys.sisis_auth.managers import SisisUserManager
 
 
-class SisisNailsUser(AbstractBaseUser, PermissionsMixin):
+class SisisUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         unique=True,
     )
@@ -35,10 +35,11 @@ class Profile(models.Model):
         null=True,
     )
     user = models.OneToOneField(
-        SisisNailsUser,
+        SisisUser,
         on_delete=models.CASCADE,
         primary_key=True,
     )
+    address = models.TextField()
 
 
 from .signals import *

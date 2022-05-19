@@ -1,64 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <!-- Modal Start -->
-    <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-bs-dismiss="modal">
-                        <i class="ri-close-line"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="modal-search-form">
-                        <input type="search" class="search-field" placeholder="Search...">
-                        <button type="submit"><i class="ri-search-line"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal End -->
-
     <!-- Inner Banner -->
     <div class="inner-banner">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="user-area pt-100 pb-70">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-6">
-                    <div class="user-all-form">
-                        <div class="contact-form" style="background-color: mistyrose">
-                            <h3 class="user-title"> Register </h3>
-                            <form id="contactForm" method="post" action="{% url 'register' %}">
-                                {% csrf_token %}
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="user-all-form">
+                                    <div class="contact-form" style="background-color: mistyrose">
+                                        <h3 class="user-title"> Register </h3>
+                                        <form id="contactForm" method="post" action="{% url 'register' %}">
+                                            {% csrf_token %}
 
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            {{ form }}
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 ">
-
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-12">
-                                        <button type="submit" class="default-btn">
-                                            Register Now
-                                        </button>
+                                            <div class="row">
+                                                {% for field in form %}
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <div class="form-control" >
+                                                                {{ field }} {{ field.label }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                                <div class="col-lg-12 col-md-12">
+                                                    <button type="submit" class="default-btn">
+                                                        Register Now
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
                 <div class="col-lg-7 col-md-7">
                     <div class="inner-title">
                         <h3>Register</h3>

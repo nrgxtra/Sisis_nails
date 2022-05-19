@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Inner Banner -->
+        <div class="inner-banner">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-7">
+                        <div class="inner-title">
+                            <h3>My Account</h3>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'home' %}">Home</a>
+                                </li>
+                                <li>My Account</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-5">
+                        <div class="inner-img">
+                            <img src="{% static 'images/inner-banner/inner-banner7.png' %}" alt="Inner Banner" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Inner Banner End -->
+        <!-- My Account Area -->
+        <div class="my-account-area ptb-100">
+            <div class="container">
+                <div class="tab account-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <ul class="tabs">
+                                <li>
+                                    {{ form }}
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div class="tab_content current active pl-20">
+                                <div class="tabs_item current">
+                                    <div class="account-details">
+                                        {% if profile.name %}
+                                        <h2>Hello {{ profile.name }}</h2>
+                                        {% else %}
+                                        <h2>Hello {{ profile.user.email}}</h2>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- My Account Area End -->
+
+{% endblock %}

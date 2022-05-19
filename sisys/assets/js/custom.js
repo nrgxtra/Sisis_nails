@@ -364,11 +364,11 @@
     // });
 
     // Preloader
-    $(window).on("load", function() {
-        var preLoder = $(".loader-wrapper");
-        preLoder.delay(700).fadeOut(500);
-        $('body').addClass("loaded");
-    });
+    // $(window).on("load", function() {
+    //     var preLoder = $(".loader-wrapper");
+    //     preLoder.delay(700).fadeOut(500);
+    //     $('body').addClass("loaded");
+    // });
 
     // AOS JS
 	AOS.init();

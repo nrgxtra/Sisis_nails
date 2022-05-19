@@ -22,4 +22,6 @@ urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('', include('sisys.home_app.urls')),
                   path('auth/', include('sisys.sisis_auth.urls')),
+                  path('blog/', include('sisys.blog_app.urls')),
+                  path('shopping/', include('sisys.shopping_app.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

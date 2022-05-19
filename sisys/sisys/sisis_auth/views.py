@@ -58,5 +58,6 @@ def profile_details(request):
     context = {
         'form': form,
         'profile': profile,
+        'user': request.user,
     }
     return render(request, 'my-account.html', context)

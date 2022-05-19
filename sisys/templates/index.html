@@ -1,375 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
-
+<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+<!-- Icon Plugins CSS -->
+<link rel="stylesheet" href="{% static 'css/iconplugins.css' %}">
+<!-- Style CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<!-- Theme Dark CSS -->
+<link rel="stylesheet" href="{% static 'css/theme-dark.css' %}">
 {% block content %}
-            <!-- Start Navbar Area -->
-<div class="navbar-area naon-area">
-    <div class="mobile-responsive-nav">
-        <div class="container">
-            <div class="mobile-responsive-menu">
-                <div class="logo">
-                    <a href="{% url 'home' %}">
-                        <img src="{% static 'images/logos/logo-small.png' %}" class="logo-one" alt="logo">
-                        <img src="{% static 'images/logos/logo-white-small.png' %}" class="logo-two" alt="logo">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Menu For Desktop Device -->
-    <div class="desktop-nav nav-area">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-md navbar-light ">
-                <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'images/logos/logo-small.png' %}" class="logo-one" alt="Logo">
-                    <img src="{% static 'images/logos/logo-white-small.png' %}" class="logo-two" alt="Logo">
-                </a>
-
-                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                    <ul class="navbar-nav m-auto">
-                        {% if not user %}
-                        <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle active">
-                                Register or Login
-                            </a>
-                            <ul class="dropdown-menu">
-
-                                <li class="nav-item">
-                                    <a href="{% url 'register' %}" class="nav-link active">
-                                        Register
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{% url 'login' %}" class="nav-link">
-                                        Login
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a href="{% url 'logout' %}" class="nav-link">
-                                Logout
-                            </a>
-                        </li>
-                        {% endif %}
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">
-                                About Us
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle">
-                                Pages
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="testimonials.html" class="nav-link">
-                                        Testimonials
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="faq.html" class="nav-link">
-                                        FAQ
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="appointment.html" class="nav-link">
-                                        Appointment
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">
-                                        Team
-                                        <i class='bx bx-chevron-down'></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="team.html" class="nav-link">
-                                                Team
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="team-details.html" class="nav-link">
-                                                Team Details
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">
-                                        Pricing Plan
-                                        <i class='bx bx-chevron-down'></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="pricing-1.html" class="nav-link">
-                                                Pricing Plan Style One
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pricing-2.html" class="nav-link">
-                                                Pricing Plan Style Two
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">
-                                        Gallery
-                                        <i class='bx bx-chevron-down'></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="gallery-1.html" class="nav-link">
-                                                Gallery Style One
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="gallery-2.html" class="nav-link">
-                                                Gallery Style Two
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">
-                                        User
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="login.html" class="nav-link">
-                                                Login
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="register.html" class="nav-link">
-                                                Register
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="forgot-password.html" class="nav-link">
-                                                Forgot Password
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="terms-condition.html" class="nav-link">
-                                        Terms & Conditions
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="privacy-policy.html" class="nav-link">
-                                        Privacy Policy
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="404.html" class="nav-link">
-                                        404 Page
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="coming-soon.html" class="nav-link">
-                                        Coming Soon
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle">
-                                Services
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="services.html" class="nav-link">
-                                        Services Style One
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="services-2.html" class="nav-link">
-                                        Services Style Two
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="service-details.html" class="nav-link">
-                                        Service Details
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-{#                        <li class="nav-item">#}
-{#                            <a href="#" class="nav-link dropdown-toggle">#}
-{#                                Shop#}
-{#                            </a>#}
-{#                            <ul class="dropdown-menu">#}
-{#                                <li class="nav-item">#}
-{#                                    <a href="shop.html" class="nav-link">Shop</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a href="cart.html" class="nav-link">Cart</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a href="checkout.html" class="nav-link">Checkout</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a href="wishlist.html" class="nav-link">Wishlist</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a href="shop-details.html" class="nav-link">Shop Details</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a href="tracking-order.html" class="nav-link">Tracking Order</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a href="compare.html" class="nav-link">Compare</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a href="customer-services.html" class="nav-link">Customer Services</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a href="{% url 'profile details' %}" class="nav-link">My Account</a>#}
-{#                                </li>#}
-{#                            </ul>#}
-{#                        </li>#}
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle">
-                                Blog </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="blog.html" class="nav-link">
-                                        Blog Grid
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="blog-2.html" class="nav-link">
-                                        Blog Left Sidebar
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="blog-3.html" class="nav-link">
-                                        Blog Right Sidebar
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="author.html" class="nav-link">
-                                        Author
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="categories.html" class="nav-link">
-                                        Categories
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="tags.html" class="nav-link">
-                                        Tags
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">
-                                        Single Blog
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="single-blog-1.html" class="nav-link">
-                                                Default
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="single-blog-2.html" class="nav-link">
-                                                With Video
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="single-blog-3.html" class="nav-link">
-                                                With Images Slider
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">
-                                Contact Us
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class="others-options d-flex align-items-center">
-                        <div class="optional-item">
-                            <div class="search-btn">
-                                <a class="#" href="#searchmodal" data-bs-toggle="modal" data-bs-target="#searchmodal">
-                                    <i class='flaticon-search'></i>
-                                </a>
-                            </div>
-                        </div>
-{#                        <div class="optional-item">#}
-{#                            <a class="optional-item-cart" href="cart.html">#}
-{#                                <i class='flaticon-shopping-cart-empty-side-view'></i>#}
-{#                                <span>0</span>#}
-{#                            </a>#}
-{#                        </div>#}
-                    </div>
-
-                    <div class="mobile-nav">
-                        <div class="mobile-other d-flex align-items-center">
-                            <div class="optional-item">
-                                <div class="search-btn">
-                                    <a class="#" href="#searchmodal" data-bs-toggle="modal"
-                                       data-bs-target="#searchmodal">
-                                        <i class='flaticon-search'></i>
-                                    </a>
-                                </div>
-                            </div>
-
-{#                            <div class="optional-item">#}
-{#                                <a class="optional-item-cart" href="cart.html">#}
-{#                                    <i class='flaticon-shopping-cart-empty-side-view'></i>#}
-{#                                    <span>0</span>#}
-{#                                </a>#}
-{#                            </div>#}
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-</div>
-<!-- End Navbar Area -->
-    <!-- Modal Start -->
-    <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-bs-dismiss="modal">
-                        <i class="ri-close-line"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="modal-search-form">
-                        <input type="search" class="search-field" placeholder="Search...">
-                        <button type="submit"><i class="ri-search-line"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal End -->
     <!-- Banner Area -->
     <div class="banner-area">
         <div class="container-fluid">
@@ -378,29 +18,24 @@
                     <div class="banner-slider owl-carousel owl-theme">
                         <div class="banner-content">
                             <span>Nail and Beauty Salon</span>
-                            <h1>Experience In Nail Care</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut elit tellus luctus nec
-                                ullamcorper
-                                mattis pulvinar dapibus leo consectetur</p>
-                            <a href="about.html" class="learn-btn">Learn More <i
-                                    class="flaticon-arrow-pointing-to-right"></i></a>
-                        </div>
-                        <div class="banner-content">
-                            <span>Nail and Beauty Salon</span>
-                            <h1>Your Nail is Our Best Advert</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut elit tellus luctus nec
-                                ullamcorper
-                                mattis pulvinar dapibus leo consectetur</p>
+                            <h1>Experience In Eyebrow Care</h1>
+                            <p>You can see testimonials</p>
                             <a href="about.html" class="learn-btn">Learn More <i
                                     class="flaticon-arrow-pointing-to-right"></i></a>
                         </div>
 
                         <div class="banner-content">
                             <span>Nail and Beauty Salon</span>
-                            <h1>Your Best Nail Affair Salon</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut elit tellus luctus nec
-                                ullamcorper
-                                mattis pulvinar dapibus leo consectetur</p>
+                            <h1>Your Eyebrows is Our Best Advert</h1>
+                            <p>See my blog and customer pictures</p>
+                            <a href="about.html" class="learn-btn">Learn More <i
+                                    class="flaticon-arrow-pointing-to-right"></i></a>
+                        </div>
+
+                        <div class="banner-content">
+                            <span>Nail and Beauty Salon</span>
+                            <h1>Your Best Eyebrows Affair Salon</h1>
+                            <p>Along with micro blading, You may go out with nails of Your choice</p>
                             <a href="about.html" class="learn-btn">Learn More <i
                                     class="flaticon-arrow-pointing-to-right"></i></a>
                         </div>
@@ -409,18 +44,19 @@
                 </div>
 
                 <div class="col-lg-6">
-                        <div class="banner-img" data-speed="0.05" data-revert="true">
-                            <div class="woman">
-                                <img src="{% static '/images/home-one/woman.png' %}" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true" alt="Banner" />
-                                <div class="vector" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
-                                    <img src="{% static '/images/home-one/home-vector.png' %}" alt="vector" />
-                                </div>
-                            </div>
-                            <div class="nail-img" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
-                                <img src="{% static '/images/home-one/nail-img.jpg' %}" alt="Nail" />
+                    <div class="banner-img" data-speed="0.05" data-revert="true">
+                        <div class="woman" data-aos-duration="1000" data-aos-once="true">
+                            <img src="{% static "/images/home-one/woman.png" %}" alt="Banner"/>
+                            <div class="vector" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
+                                <img src="{% static "/images/home-one/home-vector.png" %}" alt="vector"/>
                             </div>
                         </div>
+                        <div class="nail-img" data-aos="flip-left" data-aos-delay="900" data-aos-duration="1000"
+                             data-aos-once="true">
+                            <img src="{% static "/images/home-one/nail-img.jpg" %}" alt="Nail"/>
+                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -579,9 +215,10 @@
     </div>
     <!-- Features Area End -->
     <!-- Jquery Min JS -->
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<!-- Plugins JS -->
-<script src="{% static 'js/plugins.js' %}"></script>
-<!-- Custom  JS -->
-<script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- Plugins JS -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Custom  JS -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
 {% endblock %}
