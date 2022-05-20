@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-
     'sisys.sisis_auth',
     'sisys.home_app',
     'sisys.shopping_app',
@@ -58,7 +57,7 @@ ROOT_URLCONF = 'sisys.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'templates', ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
